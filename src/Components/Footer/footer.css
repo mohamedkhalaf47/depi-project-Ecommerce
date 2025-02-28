@@ -1,0 +1,143 @@
+footer{
+  background-color: #1e1e1e;
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.footer-container{
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.container-wrap{
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr;
+  grid-template-rows: auto;
+}
+
+.pages-links{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+footer h6{
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+.pages-links ul{
+  list-style: none;
+  padding-left: 0;
+}
+
+.pages-links ul li{
+  margin: 12px 0;
+}
+
+.pages-links ul li:hover{
+  text-decoration: underline;
+}
+
+.social-links{
+  margin-top: 27px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-links .social-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 9px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.social-links .social-icon:hover{
+  transform: translateY(-3px);
+}
+
+.logo-input{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.logo-input img{
+  width: 190px;
+  margin-bottom: 25px;
+}
+
+.logo-input form{
+  position: relative;
+}
+
+.logo-input form h5{
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.logo-input form input{
+  width: 100%;
+  height: 64px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: 1px solid #575757;
+  outline: none;
+  background-color: #272727;
+  color: #fff;
+}
+
+.logo-input form button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 39px;
+  right: 13px;
+  background-color: white;
+  color: #1e1e1e;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid #1e1e1e;
+  transition: all 0.35s ease-in-out;
+}
+
+.logo-input form button:hover{
+  color: white;
+  background-color: #1e1e1e;
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 992px) {
+  .container-wrap{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .pages-links{
+    margin-top: 45px;
+    margin-bottom: 30px;
+  }
+  .container-wrap .contact-links{
+    order: -1;
+  }
+  .logo-input{
+    margin-top: 20px;
+  }
+  .logo-input form{
+    width: 85vw;
+  }
+}
