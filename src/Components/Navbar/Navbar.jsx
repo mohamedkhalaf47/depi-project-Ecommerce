@@ -1,9 +1,9 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../assets/trendzy-logo.svg";
 import cart_icon from "../../assets/cart-icon.svg";
 import search_icon from "../../assets/search-icon.svg";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
@@ -14,12 +14,24 @@ const Navbar = () => {
     setMenu(!menu);
   };
 
+  const toggleMenu = () => {
+    setMenu(!menu);
+  };
+
   return (
     <header>
       <div className="nav-logo">
         <img src={logo} alt="logo" />
       </div>
-      <ul className="nav-menu">
+      
+      {/* Burger Menu */}
+      <div className="burger-menu" onClick={toggleMenu}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      
+      <ul className={`nav-menu ${menu ? "active" : ""}`}>
         <li
           onClick={() => setActive("home")}
           className={active === "home" ? "active" : ""}

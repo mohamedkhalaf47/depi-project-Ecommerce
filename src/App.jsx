@@ -12,6 +12,7 @@ import PrivacyPolicy from './Pages/PrivacyPolicy'
 import Product from './Pages/Product'
 import Footer from './Components/Footer/Footer'
 
+
 function App() {
 
   return (

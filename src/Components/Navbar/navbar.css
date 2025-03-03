@@ -1,15 +1,15 @@
-header{
+header {
   display: flex;
   justify-content: space-between;
   padding: 10px 85px;
 }
 
-.nav-logo{
+.nav-logo {
   display: flex;
   align-items: center;
 }
 
-.nav-menu{
+.nav-menu {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +18,7 @@ header{
   font-weight: 500;
 }
 
-.nav-menu > li:not(:last-child){
+.nav-menu > li:not(:last-child) {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,26 +28,27 @@ header{
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
-.nav-menu > li:last-child{
+
+.nav-menu > li:last-child {
   cursor: pointer;
 }
 
-.nav-menu li.active{
+.nav-menu li.active {
   background-color: #eff0f4;
 }
 
-.nav-menu > li:hover:not(:last-child){
+.nav-menu > li:hover:not(:last-child) {
   background-color: #eff0f4;
 }
 
-.nav-search-cart{
+.nav-search-cart {
   display: flex;
   align-items: center;
   gap: 20px;
   cursor: pointer;
 }
 
-.cart-count{
+.cart-count {
   width: 18px;
   height: 18px;
   display: flex;
@@ -62,11 +63,11 @@ header{
   color: white;
 }
 
-.mega-menu-holder{
+.mega-menu-holder {
   position: relative;
 }
 
-.nav-menu .mega-menu{
+.nav-menu .mega-menu {
   width: 200px;
   position: absolute;
   top: 48px;
@@ -83,16 +84,64 @@ header{
   border-radius: 12px;
 }
 
-.mega-menu li{
+.mega-menu li {
   transition: all 0.5s ease;
 }
 
-.mega-menu li.activeLine{
+.mega-menu li.activeLine {
   text-decoration: underline;
 }
 
-.nav-menu .mega-menu > li:hover{
+.nav-menu .mega-menu > li:hover {
   text-decoration: underline;
   cursor: pointer;
   color: #000;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .nav-menu {
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .burger-menu {
+    display: block;
+    cursor: pointer;
+  }
+
+  .burger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+  }
+
+  .nav-search-cart {
+    display: none; 
+  }
+
+  .nav-logo {
+    flex: 1;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -10px;
+    margin-right: -10px;
+  }
+
+  .mega-menu-holder {
+    position: static;
+  }
 }
