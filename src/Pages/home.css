@@ -1,0 +1,231 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Hero Section */
+.hero-section .bg-image {
+  background-image: url('../../src/assets/hero_image.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 560px;
+}
+
+.hero-section .container {
+  color: #6c757d;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 85%;
+}
+
+/* Buttons */
+.btn-custom {
+  background-color: white;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-custom:hover {
+  background-color: black;
+  color: #fff;
+}
+
+/* Products Section */
+.badge-custom {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  color: #6c757d !important;
+  z-index: 10;
+}
+
+.card-body-custom {
+  background: #eff0f4;
+  color: #6c757d;
+  padding: 10px;
+}
+
+.card-title-custom {
+  text-align: left;
+  color: #343a40;
+  font-size: 16px;
+  font-weight: bold;
+  min-height: 40px;
+  overflow: hidden;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background: #eff0f4;
+  z-index: 10;
+  padding: 10px 0;
+}
+
+.card-price {
+  color: #343a40;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.card-discount {
+  color: #6c757d;
+  text-decoration: line-through;
+  font-size: 14px;
+  margin-left: 8px; 
+}
+.card-price-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+/* Icons Section */
+.review-text {
+  font-size: 1.5rem;
+  animation: fadeIn 0.5s forwards;
+  text-align: center;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.icon {
+  width: 110px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.icon:hover, .icon.active {
+  opacity: 1;
+}
+
+/* Category Section */
+.category-name {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: rgba(128, 128, 128, 0.7);
+  padding: 5px 15px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.card:hover .category-name {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  background: black;
+  border-radius: 20px;
+}
+
+.card-img-top.object-fit-cover {
+  object-fit: cover;
+  height: 100%;
+  cursor: pointer;
+}
+
+.card-men .card-img-top {
+  object-fit: contain;
+  height: 300px;
+  width: 100%;
+}
+
+/* Page Effects */
+.page-container {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease-out;
+}
+
+.page-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* Animation for scrolling */
+.fadeInUp-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fadeInUp-section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fadeInUp-section-visible {
+  animation: fadeInUp 1s forwards;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .products-section .row { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .products-section .col-lg-3,
+  .products-section .col-md-4,
+  .products-section .col-6,
+  .products-section .col-sm-12 { 
+    flex: 0 0 50%; 
+    max-width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .row { 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .card-img-top { 
+    height: 400px; 
+    object-fit: cover; 
+  }
+  .products-section .col-lg-3,
+  .products-section .col-md-4,
+  .products-section .col-6,
+  .products-section .col-sm-12 { 
+    flex: 0 0 100%; 
+    max-width: 100%;
+  } 
+}
