@@ -82,6 +82,7 @@ header {
   border: 1px solid #575757;
   padding: 21px;
   border-radius: 12px;
+  z-index: 500;
 }
 
 .mega-menu li {
