@@ -64,7 +64,7 @@ const ShopAll = () => {
           displayedProducts.map((product) => (
             <div key={product.id} className="col-lg-3 col-md-4 col-6">
               <div className="card shadow-sm border-0 h-100">
-                <span className="badge bg-secondary position-absolute m-2">{product.category}</span>
+                <span className="badge badge-custom">{product.category}</span>
                 <img
                   src={product.frontImg}
                   className="card-img-top"
@@ -75,9 +75,13 @@ const ShopAll = () => {
                   })}
                 />
                 <div className="card-body text-center">
-                  <h6 className="card-title">{product.name}</h6>
-                  <p className="card-text text-muted">{product.price}</p>
-                  {product.discount && <p className="text-danger"><del>{product.discount}</del></p>}
+                <h6 className="card-title card-title-custom text-truncate m-0">
+                    {product.name}
+                  </h6>
+                  <div className="card-price-container">
+                    <span className="card-price">{product.price}</span>
+                    {product.discount && <span className="card-discount">{product.discount}</span>}
+                  </div>
                 </div>
               </div>
             </div>
@@ -87,31 +91,36 @@ const ShopAll = () => {
         )}
       </section>
 
+
       {selectedCategory === "All" && (
-        <div className="pagination-controls d-flex justify-content-end align-items-center mt-5">
-          {page === 1 ? (
-            <button
-              className="btn btn-outline-dark px-4 py-2"
-              onClick={() => {
-                setPage(2);
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              Next <i className="fas fa-arrow-right ms-2"></i>
-            </button>
-          ) : (
-<button
-  className="btn btn-outline-dark px-4 py-2"
-  onClick={() => {
-    setPage(1);
-    window.scrollTo({ top: 0, behavior: "smooth" }); 
-  }}
->
-  Previous <i className="fas fa-arrow-left ms-2"></i>
-</button>
-          )}
-        </div>
-      )}
+  <div className="pagination-controls">
+    {page === 2 && (
+      <button
+        className="pagination-btn"
+        onClick={() => {
+          setPage(1);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        <i className="fas fa-arrow-left me-2"></i> Previous
+      </button>
+    )}
+
+    <span className="pagination-text">{page}/2</span>
+
+    {page === 1 && (
+      <button
+        className="pagination-btn"
+        onClick={() => {
+          setPage(2);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+      >
+        Next <i className="fas fa-arrow-right ms-2"></i>
+      </button>
+    )}
+  </div>
+)}
     </div>
   );
 };
