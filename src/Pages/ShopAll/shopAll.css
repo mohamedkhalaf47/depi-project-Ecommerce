@@ -47,7 +47,7 @@
 
 .card {
     border: none;
-    background: white;
+    background: #eff0f4;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     opacity: 0;
@@ -81,47 +81,84 @@
     padding: 15px;
 }
 
-.card-title {
-    font-size: 1.1rem;
+.card-title-custom {
+    text-align: left;
+    color: #343a40;
+    font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
-}
+    min-height: 40px;
+    overflow: hidden;
+  }
+.badge-custom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: white;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: #6c757d !important;
+    z-index: 10;
+  }
+
 
 .card-price {
-    color: #28a745;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-.pagination button {
-    padding: 10px 15px;
-    border: 2px solid #333;
-    background: transparent;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0 5px;
-}
-
-.pagination button:hover,
-.pagination button.active {
-    background: #333;
-    color: white;
-}
-
-.next-button {
-    width: 200px;
+    color: #343a40;
+    font-size: 16px;
+    margin-left: 10px;
+  }
+  
+  .card-discount {
+    color: #6c757d;
+    text-decoration: line-through;
+    font-size: 14px;
+    margin-left: 8px; 
+  }
+  .card-price-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 8px; 
-}
+    gap: 10px; 
+    white-space: nowrap;
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    
+    
+  }
+  
+  .pagination-btn {
+    width: 40%;
+    margin: 0px 10px;
+    padding: 12px 24px;
+    border: 1px solid #343a40;
+    border-radius: 8px;
+    background-color: #eff0f4;
+    color: #343a40;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .pagination-btn:hover {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .pagination-text {
+    width: 33%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    color: #575757;
+    font-size: 18px;
+  }
 
 .fade-in {
     opacity: 0;
