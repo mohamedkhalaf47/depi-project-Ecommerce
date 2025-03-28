@@ -20,121 +20,118 @@ const Navbar = () => {
 
   return (
     <header>
-      <div className="nav-logo">
-        <img src={logo} alt="logo" />
-      </div>
-      
-      {/* Burger Menu */}
-      <div className="burger-menu" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      
-      <ul className={`nav-menu ${menu ? "active" : ""}`}>
-        <li
-          onClick={() => setActive("home")}
-          className={active === "home" ? "active" : ""}
-        >
-          <Link to="/" style={{ textDecoration: "none", color: "#000" }}>
-            Home
+      <nav className="navbar navbar-expand-lg">
+        <div className="container-fluid">
+          <Link to="/" className="navbar-brand">
+            <img src={logo} alt="logo" className="nav-logo" />
           </Link>
-        </li>
-        <li
-          onClick={() => setActive("about")}
-          className={active === "about" ? "active" : ""}
-        >
-          <Link to="/about" style={{ textDecoration: "none", color: "#000" }}>
-            About
-          </Link>
-        </li>
-        <li onClick={pagesHandler}>
-          Pages
-          {menu && (
-            <ul className="mega-menu">
+
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleMenu}
+            aria-expanded={menu ? "true" : "false"}
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className={`collapse navbar-collapse ${menu ? "show" : ""}`}>
+            <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li
+                className={`nav-item ${active === "home" ? "active" : ""}`}
                 onClick={() => setActive("home")}
-                className={active === "home" ? "activeLine" : ""}
               >
-                <Link to="/" style={{ textDecoration: "none", color: "#000" }}>
+                <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>
               <li
-                onClick={() => setActive("Shop All")}
-                className={active === "Shop All" ? "activeLine" : ""}
-              >
-                <Link
-                  to="/shop-all"
-                  style={{ textDecoration: "none", color: "#000" }}
-                >
-                  Shop All
-                </Link>
-              </li>
-              <li
+                className={`nav-item ${active === "about" ? "active" : ""}`}
                 onClick={() => setActive("about")}
-                className={active === "about" ? "activeLine" : ""}
               >
-                <Link
-                  to="/about"
-                  style={{ textDecoration: "none", color: "#000" }}
-                >
+                <Link to="/about" className="nav-link">
                   About
                 </Link>
               </li>
-              <li
-                onClick={() => setActive("blog")}
-                className={active === "blog" ? "activeLine" : ""}
-              >
-                <Link
-                  to="/blog"
-                  style={{ textDecoration: "none", color: "#000" }}
+              <li className="nav-item dropdown">
+                <span
+                  className="nav-link dropdown-toggle"
+                  onClick={pagesHandler}
+                  role="button"
+                  aria-expanded={menu ? "true" : "false"}
                 >
-                  Blog
-                </Link>
-              </li>
-              <li
-                onClick={() => setActive("contact")}
-                className={active === "contact" ? "activeLine" : ""}
-              >
-                <Link
-                  to="/contact"
-                  style={{ textDecoration: "none", color: "#000" }}
-                >
-                  Contact
-                </Link>
-              </li>
-              <li
-                onClick={() => setActive("FAQs")}
-                className={active === "FAQs" ? "activeLine" : ""}
-              >
-                <Link
-                  to="/faqs"
-                  style={{ textDecoration: "none", color: "#000" }}
-                >
-                  FAQs
-                </Link>
-              </li>
-              <li
-                onClick={() => setActive("privacy policy")}
-                className={active === "privacy policy" ? "activeLine" : ""}
-              >
-                <Link
-                  to="/privacy-policy"
-                  style={{ textDecoration: "none", color: "#000" }}
-                >
-                  Privacy Policy
-                </Link>
+                  Pages
+                </span>
+                <ul className={`dropdown-menu ${menu ? "show" : ""}`}>
+                  <li
+                    onClick={() => setActive("home")}
+                    className={active === "home" ? "activeLine" : ""}
+                  >
+                    <Link to="/" className="dropdown-item">
+                      Home
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setActive("Shop All")}
+                    className={active === "Shop All" ? "activeLine" : ""}
+                  >
+                    <Link to="/shop-all" className="dropdown-item">
+                      Shop All
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setActive("about")}
+                    className={active === "about" ? "activeLine" : ""}
+                  >
+                    <Link to="/about" className="dropdown-item">
+                      About
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setActive("blog")}
+                    className={active === "blog" ? "activeLine" : ""}
+                  >
+                    <Link to="/blogs" className="dropdown-item">
+                      Blog
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setActive("contact")}
+                    className={active === "contact" ? "activeLine" : ""}
+                  >
+                    <Link to="/contact" className="dropdown-item">
+                      Contact
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setActive("FAQs")}
+                    className={active === "FAQs" ? "activeLine" : ""}
+                  >
+                    <Link to="/faqs" className="dropdown-item">
+                      FAQs
+                    </Link>
+                  </li>
+                  <li
+                    onClick={() => setActive("privacy policy")}
+                    className={active === "privacy policy" ? "activeLine" : ""}
+                  >
+                    <Link to="/privacy-policy" className="dropdown-item">
+                      Privacy Policy
+                    </Link>
+                  </li>
+                </ul>
               </li>
             </ul>
-          )}
-        </li>
-      </ul>
-      <div className="nav-search-cart">
-        <img src={search_icon} alt="search icon" />
-        <img src={cart_icon} alt="cart icon" />
-        <div className="cart-count">0</div>
-      </div>
+
+            <div className="nav-search-cart d-flex align-items-center">
+              <img src={search_icon} alt="search icon" />
+              <img src={cart_icon} alt="cart icon" />
+              <div className="cart-count">0</div>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 };

@@ -11,7 +11,7 @@ import b04_detail_img from "./blog-04-detail.jpg"
 import b05_detail_img from "./blog-05-detail.jpg"
 import b06_detail_img from "./blog-06-detail.jpg"
 
-let blog_details =[
+const blog_details = [
   {
     id: 1,
     category: "Fashion",
@@ -29,31 +29,31 @@ let blog_details =[
   {
     id: 3,
     category: "Photography",
-    name: "Your ultimate women's fashion destination",
+    name: "Trends, tips, and inspiration for women",
     img: b03_img,
     detailed_img: b03_detail_img,
   },
   {
     id: 4,
     category: "Collection",
-    name: "Your ultimate women's fashion destination",
+    name: "Here women's fashion meets inspiration",
     img: b04_img,
     detailed_img: b04_detail_img,
   },
   {
     id: 5,
     category: "Fashion",
-    name: "Your ultimate women's fashion destination",
+    name: "Creative cuties stylish trends for young fashionistas",
     img: b05_img,
     detailed_img: b05_detail_img,
   },
   {
     id: 6,
     category: "Product",
-    name: "Your ultimate women's fashion destination",
+    name: "Elevate your look with men's fashion trends",
     img: b06_img,
     detailed_img: b06_detail_img,
-  }
-]
+  },
+];
 
 export default blog_details;

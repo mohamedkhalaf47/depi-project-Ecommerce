@@ -24,7 +24,7 @@ const Footer = () => {
             <Link to={'shop-all'} style={{textDecoration: "none",color:"#fff"}}>Shop All</Link>
           </li>
           <li>
-            <Link to={'blog'} style={{textDecoration: "none",color:"#fff"}}>Blog</Link>
+            <Link to={'blogs'} style={{textDecoration: "none",color:"#fff"}}>Blog</Link>
           </li>
           <li>
             <Link to={'contact'} style={{textDecoration: "none",color:"#fff"}}>Contact</Link>

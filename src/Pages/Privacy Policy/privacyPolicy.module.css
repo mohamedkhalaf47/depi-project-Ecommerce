@@ -1,0 +1,120 @@
+.privacy_container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  color: #333;
+}
+
+.privacy_header {
+  text-align: center;
+  background-color: #eff0f4;
+  padding: 30px;
+  margin: 0 100px;
+  border-radius: 11px;
+}
+
+.privacy_header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.update_date {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.privacy_content {
+  max-width: 800px;
+  margin: 15px auto;
+}
+
+.policy_section h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin: 1.5rem 0;
+  color: #222;
+  text-align: start;
+}
+
+.policy_section p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.policy_list {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.policy_list li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.numbered_list {
+  margin: 1.5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: decimal;
+}
+
+.numbered_list li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .privacy_container {
+    padding: 1.5rem 1rem;
+  }
+  
+  .privacy_header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .policy_section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .privacy_header {
+    margin-bottom: 2rem;
+  }
+  
+  .privacy_header h1 {
+    font-size: 2rem;
+  }
+  
+  .policy_section {
+    margin-bottom: 2rem;
+  }
+  
+  .policy_section h2 {
+    font-size: 1.4rem;
+  }
+  
+  .policy_section p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .privacy_container {
+    padding: 1rem 0.8rem;
+  }
+  
+  .privacy_header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .policy_list,
+  .numbered_list {
+    padding-left: 1rem;
+  }
+}

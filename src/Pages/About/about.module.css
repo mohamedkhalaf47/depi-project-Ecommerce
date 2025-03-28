@@ -1,0 +1,169 @@
+.about_container {
+  max-width: 1300px;
+}
+
+.top_section {
+  margin-bottom: 5rem;
+}
+
+.main_image {
+  width: 570px;
+}
+
+.section_title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 4rem;
+  line-height: 1.1;
+  color: #111;
+  margin-bottom: 2rem;
+}
+
+.small_image_wrapper {
+  margin: 2rem 0;
+}
+
+.small_image {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+.section_text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #555;
+  max-width: 90%;
+}
+
+.features_section {
+  margin: 4rem 0;
+}
+
+.feature_card {
+  background-color: #eff0f5;
+  text-align: center;
+}
+
+.feature_icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1.5rem;
+}
+
+.feature_title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #000;
+}
+
+.feature_text {
+  font-size: 1rem;
+  color: #666;
+}
+
+.stats_section {
+  margin: 4rem 0;
+}
+
+.stat_card {
+  padding: 1rem 0;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.stat_number {
+  font-size: 3.5rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.stat_text {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+@media (max-width: 1200px) {
+  .section_title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .main_image{
+    width: 850px;
+  }
+  .section_title {
+    font-size: 2rem;
+  }
+  
+  .section_text{
+    font-size: 1rem;
+  }
+
+  .content_wrapper {
+    padding: 0 1rem;
+  }
+
+  .main_image{
+    max-width: 82%;
+  }
+  
+  .small_image{
+    max-width: 570px;
+  }
+  .feature_title {
+    font-size: 1.3rem;
+  }
+  
+  .stat_number {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .top_section {
+    flex-direction: column;
+  }
+  
+  .section_title {
+    font-size: 2.2rem;
+    margin-top: 2rem;
+  }
+  
+  .section_text {
+    max-width: 100%;
+  }
+  
+  .main_image_wrapper {
+    text-align: center;
+  }
+  
+  .main_image{
+    width: 90%;
+  }
+
+  .small_image {
+    max-width: 80%;
+  }
+  
+  .feature_card {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .section_title {
+    font-size: 1.8rem;
+  }
+  
+  .stat_number {
+    font-size: 2.5rem;
+  }
+  
+  .feature_icon {
+    width: 50px;
+    height: 50px;
+  }
+}
