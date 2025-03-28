@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-import products from "../../assets/all_products"
+import React, { useState, useEffect } from "react";
+import products from "../../assets/all_products";
 import "./ShopAll.css";
 import { Link } from "react-router-dom";
 
