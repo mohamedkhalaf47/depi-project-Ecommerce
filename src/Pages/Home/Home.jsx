@@ -45,7 +45,7 @@ const Home = () => {
       <section className="hero-section d-flex align-items-center text-center text-white position-relative">
         <div className="w-100 bg-image"></div>
         <div className="container-fluid position-absolute top-50 start-50 translate-middle text-dark">
-          <h2 className="display-3 mb-3 fw-medium">
+          <h2 className="display-3 mb-3 fw-medium text-center">
             The hidden gems in <br /> fashion trends
           </h2>
           <p className="mb-4">

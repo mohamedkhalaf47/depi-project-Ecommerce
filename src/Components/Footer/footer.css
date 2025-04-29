@@ -1,3 +1,9 @@
+
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
 footer{
   background-color: #1e1e1e;
   color: white;
@@ -121,23 +127,31 @@ footer h6{
 }
 
 @media screen and (max-width: 992px) {
-  .container-wrap{
+  .container-wrap {
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start; /* بدل center */
+    justify-content: flex-start; /* كمان دي */
+    gap: 40px; /* عشان تبعدي العناصر بدل space-between */
   }
-  .pages-links{
+  .pages-links {
     margin-top: 45px;
     margin-bottom: 30px;
   }
-  .container-wrap .contact-links{
+  .container-wrap .contact-links {
     order: -1;
   }
-  .logo-input{
+  .logo-input {
     margin-top: 20px;
   }
-  .logo-input form{
-    width: 85vw;
+  .logo-input form {
+    width: 100%; /* بدل 85vw */
   }
 }
+
+
+
+
+
+
+

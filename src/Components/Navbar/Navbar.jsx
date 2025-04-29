@@ -7,15 +7,20 @@ import search_icon from "../../assets/search-icon.svg";
 
 const Navbar = () => {
   const [active, setActive] = useState("home");
-  const [menu, setMenu] = useState(false);
+  const [menu, setMenu] = useState(false); 
+  const [pagesMenu, setPagesMenu] = useState(false);
 
   const pagesHandler = () => {
-    setActive("pages");
-    setMenu(!menu);
+    setPagesMenu(!pagesMenu);
   };
 
   const toggleMenu = () => {
-    setMenu(!menu);
+    setMenu(!menu);  
+  };
+
+  const handleNavItemClick = (item) => {
+    setActive(item);
+    setMenu(false);  
   };
 
   return (
@@ -30,7 +35,7 @@ const Navbar = () => {
             className="navbar-toggler"
             type="button"
             onClick={toggleMenu}
-            aria-expanded={menu ? "true" : "false"}
+            aria-expanded={menu ? "true" : "false"} 
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
@@ -40,7 +45,7 @@ const Navbar = () => {
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
               <li
                 className={`nav-item ${active === "home" ? "active" : ""}`}
-                onClick={() => setActive("home")}
+                onClick={() => handleNavItemClick("home")}
               >
                 <Link to="/" className="nav-link">
                   Home
@@ -48,7 +53,7 @@ const Navbar = () => {
               </li>
               <li
                 className={`nav-item ${active === "about" ? "active" : ""}`}
-                onClick={() => setActive("about")}
+                onClick={() => handleNavItemClick("about")}
               >
                 <Link to="/about" className="nav-link">
                   About
@@ -59,13 +64,13 @@ const Navbar = () => {
                   className="nav-link dropdown-toggle"
                   onClick={pagesHandler}
                   role="button"
-                  aria-expanded={menu ? "true" : "false"}
+                  aria-expanded={pagesMenu ? "true" : "false"}
                 >
                   Pages
                 </span>
-                <ul className={`dropdown-menu ${menu ? "show" : ""}`}>
+                <ul className={`dropdown-menu ${pagesMenu ? "show" : ""}`}>
                   <li
-                    onClick={() => setActive("home")}
+                    onClick={() => handleNavItemClick("home")}
                     className={active === "home" ? "activeLine" : ""}
                   >
                     <Link to="/" className="dropdown-item">
@@ -73,7 +78,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    onClick={() => setActive("Shop All")}
+                    onClick={() => handleNavItemClick("Shop All")}
                     className={active === "Shop All" ? "activeLine" : ""}
                   >
                     <Link to="/shop-all" className="dropdown-item">
@@ -81,7 +86,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    onClick={() => setActive("about")}
+                    onClick={() => handleNavItemClick("about")}
                     className={active === "about" ? "activeLine" : ""}
                   >
                     <Link to="/about" className="dropdown-item">
@@ -89,7 +94,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    onClick={() => setActive("blog")}
+                    onClick={() => handleNavItemClick("blog")}
                     className={active === "blog" ? "activeLine" : ""}
                   >
                     <Link to="/blogs" className="dropdown-item">
@@ -97,7 +102,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    onClick={() => setActive("contact")}
+                    onClick={() => handleNavItemClick("contact")}
                     className={active === "contact" ? "activeLine" : ""}
                   >
                     <Link to="/contact" className="dropdown-item">
@@ -105,7 +110,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    onClick={() => setActive("FAQs")}
+                    onClick={() => handleNavItemClick("FAQs")}
                     className={active === "FAQs" ? "activeLine" : ""}
                   >
                     <Link to="/faqs" className="dropdown-item">
@@ -113,7 +118,7 @@ const Navbar = () => {
                     </Link>
                   </li>
                   <li
-                    onClick={() => setActive("privacy policy")}
+                    onClick={() => handleNavItemClick("privacy policy")}
                     className={active === "privacy policy" ? "activeLine" : ""}
                   >
                     <Link to="/privacy-policy" className="dropdown-item">
