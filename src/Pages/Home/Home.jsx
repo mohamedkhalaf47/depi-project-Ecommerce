@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./home.css";
-import { recent_products,reviews } from "../../assets/recent_products";
+import { recent_products,reviews,categories } from "../../assets/recent_products";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -53,12 +53,15 @@ const Home = () => {
             with our unbeatable t-shirt trendsetter of today.
           </p>
           <div>
-            <Link to={`/shop-all`} className="btn btn-outline-dark m-2 btn-custom">
-              Shop Women
-            </Link>
-            <Link to={`/shop-all`} className="btn btn-outline-dark m-2 btn-custom">
-              Shop Men
-            </Link>
+
+          <Link to="/category/Women" className="btn btn-outline-dark m-2 btn-custom">
+            Shop Women
+          </Link>
+          <Link to="/category/Men" className="btn btn-outline-dark m-2 btn-custom">
+            Shop Men
+          </Link>
+
+
           </div>
         </div>
       </section>
@@ -128,47 +131,37 @@ const Home = () => {
       </section>
 
       {/* Category Section {4} */}
-      <section className="container-fluid my-5">
-        <div className="row g-4">
-          <div className="col-md-5 order-md-1 order-2">
-            <div className="card border-0 shadow-sm h-100 position-relative">
-              <img
-                src="../../src/assets/shopCategory_male.jpg"
-                className="card-img-top object-fit-cover"
-                alt="Category"
-              />
-              <div className="category-name">Men</div>
-            </div>
-          </div>
-          <div className="col-md-7 d-flex flex-column order-md-2 order-1">
-            <div className="mb-3 text-start align-items-start">
-              <h2 className="fw-semibold text-start fs-2">Shop by Category</h2>
-              <Link to={'shop-all'} className="btn btn-outline-dark m-2 p-2 btn-custom">
-                View All Products
-              </Link>
-            </div>
-            <div className="row g-3 flex-grow-1 align-items-end">
-              {[
-                "../../src/assets/shopCategory_female.jpg",
-                "../../src/assets/shopCategory_kid.jpg",
-              ].map((category, index) => (
-                <div className="col-md-6 col-6" key={index}>
-                  <div className="card border-0 shadow-sm w-100 position-relative">
-                    <img
-                      src={category}
-                      className="card-img-top object-fit-cover"
-                      alt="Category"
-                    />
-                    <div className="category-name">
-                      {index === 0 ? "Women" : "Kid"}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+      <section className="container my-5">
+  <div className="row g-4">
+    <div className="col-md-5">
+      <Link to={`/category/${categories[0].name}`} className="text-decoration-none">
+        <div className="card border-0 shadow-sm position-relative h-100">
+          <img src={categories[0].image} className="card-img-top object-fit-cover" alt={categories[0].name} />
+          <div className="category-name fw-bold">{categories[0].name}</div>
         </div>
-      </section>
+      </Link>
+    </div>
+    <div className="col-md-7 d-flex flex-column">
+      <div className="mb-3">
+        <h3 className="fw-bold">Shop by Category</h3>
+        <Link to="/Shop-All" className="btn btn-outline-dark btn-sm">View All Products</Link>
+      </div>
+      <div className="row g-3 mt-auto">
+        {categories.slice(1).map((cat) => (
+          <div className="col-6" key={cat.name}>
+            <Link to={`/category/${cat.name}`} className="text-decoration-none">
+              <div className="card border-0 shadow-sm position-relative">
+                <img src={cat.image} className="card-img-top object-fit-cover" alt={cat.name} />
+                <div className="category-name fw-bold">{cat.name}</div>
+              </div>
+            </Link>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

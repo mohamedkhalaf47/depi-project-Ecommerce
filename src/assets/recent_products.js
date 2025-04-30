@@ -78,3 +78,9 @@ export const reviews = {
   Grapherz:
     "I'm always on the lookout for unique pieces, and this website delivers every time. From casual wear to formal attire, they have it all.",
 };
+
+export const categories = [
+  { name: "Men", image: "../../src/assets/shopCategory_male.jpg", link: "/category/Men" },
+  { name: "Women", image: "../../src/assets/shopCategory_female.jpg", link: "/category/Women" },
+  { name: "Kids", image: "../../src/assets/shopCategory_kid.jpg", link: "/category/Kids" },
+];

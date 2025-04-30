@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
 import products from "../../assets/all_products";
 import "./ShopAll.css";
-import { Link } from "react-router-dom";
+import { Link, useParams,useNavigate } from "react-router-dom";
 
 const ShopAll = () => {
   const [isMobile, setIsMobile] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const { category } = useParams();
+  const navigate = useNavigate();
+  const [selectedCategory, setSelectedCategory] = useState(category ||"All");
   const [page, setPage] = useState(1);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 992);
     };
+    setSelectedCategory(category || "All");
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [category]);
 
   const filteredProducts =
     selectedCategory === "All"
@@ -40,8 +43,7 @@ const ShopAll = () => {
                     : "btn-outline-dark"
                 }`}
                 onClick={() => {
-                  setSelectedCategory(category);
-                  setPage(1);
+                  navigate(`/category/${category}`);
                 }}
               >
                 {category}
@@ -56,9 +58,7 @@ const ShopAll = () => {
           displayedProducts.map((product) => (
             <div key={product.id} className="col-lg-3 col-md-4 col-6">
               <div className="card shadow-sm border-0 h-100">
-                <span className="badge bg-secondary position-absolute m-2">
-                  {product.category}
-                </span>
+                <span className="badge badge-custom">{product.category}</span>
                 <Link to={`/product/${product.name}`}>
                   <img
                     src={product.image}

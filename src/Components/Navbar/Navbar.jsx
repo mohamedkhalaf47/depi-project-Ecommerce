@@ -81,7 +81,7 @@ const Navbar = () => {
                     onClick={() => handleNavItemClick("Shop All")}
                     className={active === "Shop All" ? "activeLine" : ""}
                   >
-                    <Link to="/shop-all" className="dropdown-item">
+                    <Link to="/Shop-All" className="dropdown-item">
                       Shop All
                     </Link>
                   </li>
