@@ -19,14 +19,14 @@
   top: 20px; 
   align-self: flex-start;
   height: fit-content;
-  z-index: 1;
+  z-index: -1;
 }
 
 .badge_custom {
-  background-color: #343a40;
+  background-color: #000;
   color: #fff;
   font-size: 0.85rem;
-  padding: 6px 12px;
+  padding: 10px 20px;
   border-radius: 8px;
   align-self: flex-start;
   margin-bottom: 10px;
@@ -203,6 +203,7 @@
   flex-direction: column; 
   gap: 20px;
   align-items: center;
+  padding: 20px;
 }
 
 .review_card {
@@ -217,7 +218,6 @@
 .reviewer_name {
   font-weight: normal;
   font-size: 1.2em;
- 
 }
 
 
@@ -247,12 +247,76 @@
   margin-left: 10px; 
 }
 
+.card{
+  padding: 15px;
+  border: none;
+  background: #eff0f4;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 0.6s ease-out forwards;
+  overflow: hidden;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.second_badge_custom {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: thin;
+  border-radius: 5px;
+  color: #6c757d !important;
+  z-index: 10;
+}
+
+
+.card_img_top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.products_container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .products_container{
+    flex-direction: column;
+  }
+}
 
 
 
-
-
-
+@media (min-width: 769px) and (max-width: 1080px){
+  .products_container{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+  }
+}
 
 
 

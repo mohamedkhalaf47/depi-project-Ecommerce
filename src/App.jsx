@@ -11,6 +11,7 @@ import FAQs from "./Pages/FAQs/FAQs";
 import PrivacyPolicy from "./Pages/Privacy Policy/PrivacyPolicy";
 import Footer from "./Components/Footer/Footer";
 import SingleBlog from "./Pages/SingleBlog/SingleBlog";
+import Cart from "./Pages/Cart/Cart";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cart" element={<Cart />}/>
       </Routes>
       <Footer />
     </>

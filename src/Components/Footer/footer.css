@@ -1,9 +1,8 @@
-
-
 html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
+
 footer{
   background-color: #1e1e1e;
   color: white;
@@ -84,46 +83,45 @@ footer h6{
 }
 
 .logo-input form{
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 12px;
+  padding: 5px 10px;
 }
 
-.logo-input form h5{
+.logo-input form:focus{
+  border: 1px solid white;
+}
+
+.logo-input p{
   font-size: 19px;
-  font-weight: 600;
 }
 
 .logo-input form input{
-  width: 100%;
-  height: 64px;
-  padding: 10px 20px;
-  font-size: 14px;
-  font-weight: 400;
-  border-radius: 10px;
-  border: 1px solid #575757;
+  background-color: transparent;
   outline: none;
-  background-color: #272727;
-  color: #fff;
+  border: none;
+  padding: 0 11px;
+  color: white;
+  font-size: 15px;
 }
 
 .logo-input form button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 39px;
-  right: 13px;
   background-color: white;
-  color: #1e1e1e;
   padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid #1e1e1e;
-  transition: all 0.35s ease-in-out;
+  border-radius: 8px;
+  transition: all 0.35s;
+  border: 1px solid #fff;
+  font-size: 14px;
 }
 
 .logo-input form button:hover{
   color: white;
   background-color: #1e1e1e;
-  border: 1px solid #fff;
+  outline: none;
 }
 
 @media screen and (max-width: 992px) {

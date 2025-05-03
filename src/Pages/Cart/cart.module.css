@@ -1,0 +1,85 @@
+.cartContainer{
+  padding: 0 64px;
+}
+
+.cartTitle{
+  font-size: 1.5rem;
+  margin: 10px 0;
+}
+
+.itemsContainer{
+  padding: 0;
+}
+
+.cartTable{
+  width: 100%;
+  color: oklch(37.3% 0.034 259.733);
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  gap: 4rem;
+}
+
+.cartItem{
+  width: 100%;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  gap: 4rem;
+  border-top: 1px solid #00000056;
+}
+
+.itemImage{
+  width: 12rem;
+}
+
+.itemName{
+  font-size: 21px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.itemDataContainer{
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.itemCount{
+  background-color: oklch(98.4% 0.003 247.858);
+  border: 1px solid #00000056;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+
+.cartTotalContainer{
+  width: 30%;
+}
+
+.cartImage{
+  width: 150px;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 360px) and (max-width: 1080px){
+  .cartTable{
+    flex-direction: column;
+  }
+  .cartItem{
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .itemImage{
+    width: 7rem;
+  }
+  .itemName{
+    font-size: 18px;
+  }
+  .itemCount{
+    padding: 0 0.5rem;
+  }
+  .cartTotalContainer{
+    width: 100%;
+  }
+}
