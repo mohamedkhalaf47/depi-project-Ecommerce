@@ -157,13 +157,48 @@ input[type="submit"]:hover {
 }
 
 @media (max-width: 1200px) {
-    .container {
+    .container_contact {
         grid-template-columns: 1fr;
         padding: 30px;
     }
 
     .contact-section h1 {
         font-size: 50px;
+    }
+
+    .social-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .contact-info{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-info .text{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-info img{
+        width: 30px;
+    }
+
+    .contact-info .title{
+        font-size: 17px;
+    }
+    
+    .contact-info .description{
+        font-size: 14px;
+    }
+
+    .contact-description p{
+        text-align: center;
     }
 
     .contact-item {
@@ -179,10 +214,14 @@ input[type="submit"]:hover {
     .contact-item .text {
         margin-left: 0;
     }
+
+    input[type="submit"]{
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    .container {
+    .container_contact {
         padding: 20px;
     }
 

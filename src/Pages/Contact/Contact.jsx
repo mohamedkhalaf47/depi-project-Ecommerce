@@ -29,7 +29,7 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="Contact">
+		<>
 			<div className="container_contact">
 				<div className="contact-section">
 					<h1>Getting in touch is easy!</h1>
@@ -66,7 +66,7 @@ const Contact = () => {
 					</div>
 				</div>
 				<div className="contact-form">
-					<div className="contact-discription">
+					<div className="contact-description">
 						<p>
 							Been tearing your hair out to find the perfect gift for your loved
 							ones? Try visiting our nationwide local stores. You can also
@@ -177,7 +177,7 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 export default Contact;
