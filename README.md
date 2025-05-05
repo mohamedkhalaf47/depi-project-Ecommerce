@@ -29,17 +29,16 @@ An e-commerce web application developed as part of the Digital Egypt Pioneers In
 
 ## 📂 Project Structure
 
-├── public/ # Static assets
-├── src/ # Source code
-│ ├── components/ # Reusable components
-│ ├── pages/ # Page components
-│ ├── assets/ # Images and icons
-│ ├── App.jsx # Root component
-│ └── main.jsx # Entry point
-├── index.html # Main HTML file
-├── package.json # Project metadata and dependencies
-├── vite.config.js # Vite configuration
-└── README.md # Project documentation
+depi-project-Ecommerce/
+├── client/                     
+│   ├── public/                 
+│   └── src/                    
+│       ├── assets/             
+│       ├── components/          
+│       ├── pages/               
+│       ├── services/            
+│       ├── App.jsx              
+│       └── main.jsx             
 
 
 ## 🧑‍💻 Getting Started
