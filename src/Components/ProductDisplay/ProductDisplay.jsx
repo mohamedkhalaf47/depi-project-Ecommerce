@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { addToCart } from "../../features/cart/cartSlice";
 import styles from "../../Components/ProductDisplay/ProductDisplay.module.css";
 import related_products from "../../assets/related_products";
@@ -22,7 +23,9 @@ const ProductDisplay = ({ product }) => {
 	const [value, setValue] = useState(1);
 	const additionalImages = categoryImages[product.category] || [];
 	const [isMobile, setIsMobile] = useState(false);
+	const { token } = useContext(ShopContext);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -92,19 +95,28 @@ const ProductDisplay = ({ product }) => {
 									max={10}
 									className={styles.numberInput}
 								/>
-								<button
-									className={`btn btn-sm btn-dark mt-3 ${styles.addToCartBtn}`}
-									onClick={() =>
-										dispatch(
-											addToCart({
-												productId: product.id.toString(),
-												inputValue: value,
-											})
-										)
-									}
-								>
-									Add to Cart
-								</button>
+								{token ? (
+									<button
+										className={`btn btn-sm btn-dark mt-3 ${styles.addToCartBtn}`}
+										onClick={() =>
+											dispatch(
+												addToCart({
+													productId: product.id.toString(),
+													inputValue: value,
+												})
+											)
+										}
+									>
+										Add to Cart
+									</button>
+								) : (
+									<button
+										disabled
+										className={`btn btn-sm btn-dark mt-3 ${styles.addToCartBtn}`}
+									>
+										Login To Purchase Product
+									</button>
+								)}
 							</div>
 
 							<div className={styles.productDetailsContainer}>
@@ -260,17 +272,21 @@ const ProductDisplay = ({ product }) => {
 								<span className={`badge ${styles.second_badge_custom}`}>
 									{product.category}
 								</span>
-								<Link to={`/product/${product.name}`}>
-									<img
-										src={product.image}
-										className={`${styles.card_img_top}`}
-										alt={product.name}
-										{...(!isMobile && {
-											onMouseEnter: (e) => (e.target.src = product.hover_image),
-											onMouseLeave: (e) => (e.target.src = product.image),
-										})}
-									/>
-								</Link>
+
+								<img
+									src={product.image}
+									className={`${styles.card_img_top}`}
+									alt={product.name}
+									onClick={() => {
+										navigate(`/product/${product.name}`);
+										scrollTo(0, 0);
+									}}
+									{...(!isMobile && {
+										onMouseEnter: (e) => (e.target.src = product.hover_image),
+										onMouseLeave: (e) => (e.target.src = product.image),
+									})}
+								/>
+
 								<div className="card-body text-start">
 									<h6 className="card-title">{product.name}</h6>
 									<span className="card-text text-muted">

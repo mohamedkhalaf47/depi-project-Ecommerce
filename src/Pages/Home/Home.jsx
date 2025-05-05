@@ -1,16 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./home.css";
 import {
 	recent_products,
 	reviews,
 	categories,
 } from "../../assets/recent_products";
-import { Link } from "react-router-dom";
+import plusIcon from "../../assets/addtoCartIcon.svg";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cart/cartSlice";
+import { ShopContext } from "../../Context/ShopContext";
 
 const Home = () => {
 	const [visible, setVisible] = useState(false);
 	const [isMobile, setIsMobile] = useState(false);
 	const [activeBrand, setActiveBrand] = useState("Artistry");
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const { token } = useContext(ShopContext);
 
 	useEffect(() => {
 		// Run the effect of appearing when the page loads
@@ -77,7 +84,7 @@ const Home = () => {
 			<section className="container-fluid py-5 products-section">
 				<h2 className="mb-4 text-start fs-2">Recent Products</h2>
 				<div className="row">
-					{recent_products.map(product => (
+					{recent_products.map((product) => (
 						<div
 							key={product.id}
 							className="col-lg-3 col-md-4 col-6 col-sm-12 mb-3 fadeInUp-section"
@@ -96,13 +103,30 @@ const Home = () => {
 									/>
 								</Link>
 								<div className="card-body card-body-custom d-flex flex-column justify-content-between flex-grow-1">
-									<h6 className="card-title card-title-custom text-truncate m-0">
-										{product.name}
-									</h6>
+									<div className="d-flex align-items-center justify-content-between">
+										<h6 className="card-title">{product.name}</h6>
+										{token && (
+											<img
+												src={plusIcon}
+												alt="plus"
+												className="plus_icon"
+												onClick={() =>
+													dispatch(
+														addToCart({
+															productId: product.id.toString(),
+															inputValue: 1,
+														})
+													)
+												}
+											/>
+										)}
+									</div>
 									<div className="card-price-container">
 										<span className="card-price">${product.price} USD</span>
 										{product.discount && (
-											<span className="card-discount">${product.discount} USD</span>
+											<span className="card-discount">
+												${product.discount} USD
+											</span>
 										)}
 									</div>
 								</div>
@@ -120,7 +144,7 @@ const Home = () => {
 					</p>
 				</div>
 				<div className="container-fluid my-4">
-					<div className="d-flex justify-content-center align-items-center gap-5">
+					<div className="d-flex justify-content-center align-items-center gap-5 brand-wrapper">
 						{["Artistry", "Dexign", "Emblem", "Grapherz"].map((brand) => (
 							<img
 								key={brand}
@@ -157,26 +181,31 @@ const Home = () => {
 					<div className="col-md-7 d-flex flex-column">
 						<div className="mb-3">
 							<h3 className="fw-bold">Shop by Category</h3>
-							<Link to="/Shop-All" className="btn btn-outline-dark btn-sm">
+							<button
+								onClick={() => {
+									navigate("/Shop-All");
+									scrollTo(0, 0);
+								}}
+								className="btn btn-outline-dark btn-sm"
+							>
 								View All Products
-							</Link>
+							</button>
 						</div>
 						<div className="row g-3 mt-auto">
 							{categories.slice(1).map((cat) => (
 								<div className="col-6" key={cat.name}>
-									<Link
-										to={`/category/${cat.name}`}
-										className="text-decoration-none"
-									>
-										<div className="card border-0 shadow-sm position-relative">
-											<img
-												src={cat.image}
-												className="card-img-top object-fit-cover"
-												alt={cat.name}
-											/>
-											<div className="category-name fw-bold">{cat.name}</div>
-										</div>
-									</Link>
+									<div className="card border-0 shadow-sm position-relative">
+										<img
+											src={cat.image}
+											className="card-img-top object-fit-cover"
+											alt={cat.name}
+											onClick={() => {
+												navigate(`/category/${cat.name}`);
+												scrollTo(0, 0);
+											}}
+										/>
+										<div className="category-name fw-bold">{cat.name}</div>
+									</div>
 								</div>
 							))}
 						</div>

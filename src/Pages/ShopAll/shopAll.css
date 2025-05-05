@@ -96,6 +96,11 @@
   overflow: hidden;
 }
 
+.plus_icon{
+  width: 32px;
+  cursor: pointer;
+}
+
 .sticky-header {
   position: sticky;
   top: 0;

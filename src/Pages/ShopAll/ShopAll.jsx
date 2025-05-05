@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import products from "../../assets/all_products";
+import plusIcon from "../../assets/addtoCartIcon.svg";
 import "./ShopAll.css";
+import { addToCart } from "../../features/cart/cartSlice";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { ShopContext } from "../../Context/ShopContext";
 
 const ShopAll = () => {
-	const [isMobile, setIsMobile] = useState(false);
 	const { category } = useParams();
-	const navigate = useNavigate();
+	const [isMobile, setIsMobile] = useState(false);
 	const [selectedCategory, setSelectedCategory] = useState(category || "All");
 	const [page, setPage] = useState(1);
+	const { token } = useContext(ShopContext);
+	const dispatch = useDispatch()
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const handleResize = () => {
@@ -71,8 +77,25 @@ const ShopAll = () => {
 									/>
 								</Link>
 								<div className="card-body text-start">
-									<h6 className="card-title">{product.name}</h6>
-									<span className="card-text text-muted">${product.price} USD</span>
+									<div className="d-flex align-items-center justify-content-between">
+										<h6 className="card-title">{product.name}</h6>
+										{token && <img
+											src={plusIcon}
+											alt="plus"
+											className="plus_icon"
+											onClick={() =>
+												dispatch(
+													addToCart({
+														productId: product.id.toString(),
+														inputValue: 1,
+													})
+												)
+											}
+										/>}
+									</div>
+									<span className="card-text text-muted">
+										${product.price} USD
+									</span>
 									{product.discount && (
 										<span className="text-secondary mx-3">
 											<del>${product.discount} USD</del>

@@ -1,16 +1,19 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 import logo from "../../assets/trendzy-logo.svg";
 import cart_icon from "../../assets/cart-icon.svg";
 import { useSelector } from "react-redux";
 import { getCartCount } from "../../features/cart/cartSlice";
+import { ShopContext } from "../../Context/ShopContext";
+import { toast } from "react-toastify";
 
 const Navbar = () => {
 	const [pagesMenu, setPagesMenu] = useState(false);
 	const [active, setActive] = useState("home");
 	const [menu, setMenu] = useState(false);
-  const cartCount = useSelector(getCartCount);
+	const { token, setToken } = useContext(ShopContext);
+	const cartCount = useSelector(getCartCount);
 
 	const pagesHandler = () => {
 		setPagesMenu(!pagesMenu);
@@ -24,6 +27,12 @@ const Navbar = () => {
 		setActive(item);
 		setMenu(false);
 		setPagesMenu(false);
+	};
+
+	const logout = async () => {
+		setToken(false);
+		localStorage.removeItem("UserToken");
+		toast.success("Logged Out")
 	};
 
 	return (
@@ -116,12 +125,29 @@ const Navbar = () => {
 							</li>
 						</ul>
 
-						<Link to={"/cart"}>
-							<div className="nav-search-cart d-flex align-items-center">
-								<img src={cart_icon} alt="cart icon" />
-								<div className="cart-count">{cartCount}</div>
-							</div>
-						</Link>
+						<div className="d-flex align-items-center justify-content-evenly gap-4">
+							{token ? (
+								<>
+									<Link to={"/cart"}>
+										<div className="d-flex align-items-center">
+											<img src={cart_icon} alt="cart icon" />
+											<div className="cart-count">{cartCount}</div>
+										</div>
+									</Link>
+									<button
+									onClick={logout}
+									className="bg-black text-white p-2 rounded-4">
+										Logout
+									</button>
+								</>
+							) : (
+								<Link to={"/login"}>
+									<button className="bg-black text-white p-2 rounded-4">
+										Login
+									</button>
+								</Link>
+							)}
+						</div>
 					</div>
 				</div>
 			</nav>
