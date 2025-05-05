@@ -30,15 +30,31 @@ An e-commerce web application developed as part of the Digital Egypt Pioneers In
 ## 📂 Project Structure
 
 depi-project-Ecommerce/
-├── client/                     
-│   ├── public/                 
-│   └── src/                    
-│       ├── assets/             
-│       ├── components/          
-│       ├── pages/               
-│       ├── services/            
-│       ├── App.jsx              
-│       └── main.jsx             
+├── client/                      # React frontend
+│   ├── public/                  # Static assets (index.html, favicon, etc.)
+│   └── src/                     # Frontend source code
+│       ├── assets/              # Images and static files
+│       ├── components/          # Reusable UI components
+│       ├── pages/               # Route-level components
+│       ├── services/            # API calls and integrations
+│       ├── App.jsx              # Main app component
+│       └── main.jsx             # React app entry point
+│
+├── server/                      # Express backend
+│   ├── config/                  # Configuration files (e.g., DB, env)
+│   ├── controllers/             # Route handlers
+│   ├── middleware/              # Custom Express middleware
+│   ├── models/                  # Mongoose models (schemas)
+│   ├── routes/                  # API endpoint definitions
+│   ├── utils/                   # Utility helper functions
+│   └── server.js                # Express app entry point
+│
+├── .env                         # Environment variables
+├── .gitignore                   # Git ignored files
+├── package.json                 # Project metadata and scripts
+├── vite.config.js               # Vite config for frontend
+└── README.md                    # Project documentation
+         
 
 
 ## 🧑‍💻 Getting Started
