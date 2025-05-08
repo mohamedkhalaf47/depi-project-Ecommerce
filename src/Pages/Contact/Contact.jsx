@@ -18,7 +18,6 @@ const Contact = () => {
 	const handleSubmit = async(e) => {
 		e.preventDefault();
 		try {
-			console.log("Form data submitted:", formData);
 			setIsSubmitted(true);
 			setHasError(false);
 			setFormData({ name: "", email: "", message: "" });

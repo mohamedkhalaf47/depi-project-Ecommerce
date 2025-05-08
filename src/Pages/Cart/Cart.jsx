@@ -6,9 +6,10 @@ import styles from "./cart.module.css";
 import CartTotal from "../../Components/CartTotal/CartTotal";
 import { Link } from "react-router-dom";
 import emptyCart from "../../assets/empty-cart.svg";
+import NotFound from "../NotFound/NotFound";
 
 const Cart = () => {
-	const { products, currency } = useContext(ShopContext);
+	const { products, currency, token } = useContext(ShopContext);
   const cartItems = useSelector((state) => state.cart.cartItems);
 	const dispatch = useDispatch();
 	const [cartData, setCartData] = useState([]);
@@ -26,7 +27,7 @@ const Cart = () => {
 		setCartData(tempData);
 	}, [cartItems]);
 
-	return (
+	return token ? (
 		<div className={styles.cartContainer}>
 			<div className={styles.cartTitle}>Your Cart</div>
 
@@ -117,7 +118,7 @@ const Cart = () => {
 				</div>
 			</div>
 		</div>
-	);
+	):(<NotFound/>);
 };
 
 export default Cart;

@@ -3,7 +3,6 @@ import styles from "./blogDisplay.module.css";
 import blog_details from "../../assets/blog";
 import { Link } from "react-router-dom";
 const BlogDisplay = ({ blog }) => {
-	console.log(blog);
 	return (
 		<div className={styles.blog_display}>
 			<section>

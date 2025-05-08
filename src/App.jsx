@@ -30,6 +30,9 @@ function App() {
 			"/cart",
 			"/login",
 			"/blogs",
+			"/category",
+			"/product",
+			"/blog",
 		].includes(
 			location.pathname.split("/")[1]
 				? `/${location.pathname.split("/")[1]}`
