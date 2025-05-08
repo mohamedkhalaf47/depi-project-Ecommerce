@@ -18,6 +18,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"/"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/" ? "text-decoration-underline" : ""
@@ -29,6 +30,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"about"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/about"
@@ -42,6 +44,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"Shop-All"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/Shop-All"
@@ -55,6 +58,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"blogs"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/blogs"
@@ -68,6 +72,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"contact"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/contact"
@@ -81,6 +86,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"faqs"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/faqs"
@@ -94,6 +100,7 @@ const Footer = () => {
 							<li>
 								<Link
 									to={"privacy-policy"}
+									onClick={() => scrollTo(0, 0)}
 									style={{ textDecoration: "none", color: "#fff" }}
 									className={`${
 										location.pathname === "/privacy-policy"
