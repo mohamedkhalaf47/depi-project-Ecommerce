@@ -107,7 +107,7 @@ const BlogDisplay = ({ blog }) => {
 					{blog_details.slice(0, 3).map((blog) => (
 						<div key={blog.id} className={styles.blog_post}>
 							<div className={styles.blog_image_wrapper}>
-								<Link to={`/blog/${blog.name}`}>
+								<Link to={`/blog/${blog.name}`} onClick={() => scrollTo(0,0)}>
 									<img src={blog.img} alt={blog.name} />
 									<div className={styles.category_overlay}>
 										<span className={styles.category}>{blog.category}</span>
