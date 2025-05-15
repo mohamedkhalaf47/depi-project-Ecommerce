@@ -1,24 +1,17 @@
-import React, { useContext } from "react";
 import styles from "./NotFound.module.css";
 import { useNavigate } from "react-router-dom";
-import { ShopContext } from "../../Context/ShopContext";
 
-const NotFound = () => {
+const NotFound = ({code, title, description,button}) => {
 	const navigate = useNavigate();
-	const { token } = useContext(ShopContext);
 	return (
 		<div
 			className={`${styles.notFoundContainer} d-flex align-items-center justify-content-center flex-column my-5`}
 		>
-			<h1>{token ? "404" : "401"}</h1>
-			<h4>{token ? "Page Not Found" : "Login To Use Our Features"}</h4>
-			<p>
-				{token
-					? "The page you are looking for doesn't exist"
-					: "Click On The Following Button To Login"}
-			</p>
+			<h1>{code}</h1>
+			<h4>{title}</h4>
+			<p>{description}</p>
 			<div className="d-flex gap-2 align-items-center">
-				{token ? (
+				{button ? (
 					<>
 						<button
 							onClick={() => {

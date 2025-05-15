@@ -118,7 +118,13 @@ const Cart = () => {
 				</div>
 			</div>
 		</div>
-	):(<NotFound/>);
+	): (
+		<NotFound
+			code={"401"}
+			title={"Login To Use Our Features"}
+			description={"Click On The Following Button To Login"}
+		/>
+	);
 };
 
 export default Cart;

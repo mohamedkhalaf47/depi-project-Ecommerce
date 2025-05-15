@@ -65,7 +65,10 @@ const ShopAll = () => {
 						<div key={product.id} className="col-lg-3 col-md-4 col-6">
 							<div className="card shadow-sm border-0 h-100">
 								<span className="badge badge-custom">{product.category}</span>
-								<Link to={`/product/${product.name}`}>
+								<Link
+									to={`/product/${product.name}`}
+									onClick={() => scrollTo(0, 0)}
+								>
 									<img
 										src={product.image}
 										className="card-img-top"

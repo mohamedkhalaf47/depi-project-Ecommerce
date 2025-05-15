@@ -59,7 +59,17 @@ function App() {
 				<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 				<Route path="/cart" element={<Cart />} />
 				<Route path="/login" element={<Login />} />
-				<Route path="*" element={<NotFound />} />
+				<Route
+					path="*"
+					element={
+						<NotFound
+							code={"404"}
+							title={"Page Not Found"}
+							description={"The page you are looking for doesn't exist"}
+							button
+						/>
+					}
+				/>
 			</Routes>
 			{!isNotFoundPage && <Footer />}
 		</>
