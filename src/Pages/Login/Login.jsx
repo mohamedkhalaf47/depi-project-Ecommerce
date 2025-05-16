@@ -27,6 +27,10 @@ const Login = () => {
 				if (data.success) {
 					localStorage.setItem("UserToken", data.token);
 					setToken(data.token);
+					toast.success("Created Account Successfully");
+					setTimeout(() => {
+						window.location.reload();
+					}, 1000);
 				}
 			}
 			if (state === "Login") {
