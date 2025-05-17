@@ -91,7 +91,7 @@ const Home = () => {
 						>
 							<div className="card shadow-sm border-0 card-custom h-100 d-flex flex-column">
 								<span className="badge badge-custom">{product.category}</span>
-								<Link to={`product/${product.name}`}>
+								<Link to={`product/${product.name}`} onClick={() => scrollTo(0,0)}>
 									<img
 										src={product.frontImg}
 										className="card-img-top card-img-hover"
